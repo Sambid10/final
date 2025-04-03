@@ -4,7 +4,7 @@ import { WobbleCard } from "./WobbleCard";
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen px-6 flex justify-center items-center">
-      <WobbleCard className="relative z-0 rounded">
+      <WobbleCard className="relative z-0 rounded hidden md:block md:w-full">
       <div
         style={{
           backgroundImage: "url('6.jpg')", // Replace with your image URL
@@ -12,7 +12,7 @@ export default function AboutUsPage() {
           backgroundRepeat: "no-repeat", // Optional, prevents repeating
           backgroundPosition: "center", // Optional, positions the image
         }}
-        className="hidden md:block md:w-full h-[70vh] rounded shadow-[0_6px_20px_rgba(128,128,128,0.3)]"
+        className=" h-[70vh] rounded shadow-[0_6px_20px_rgba(128,128,128,0.3)]"
       ></div>
       </WobbleCard>
     
