@@ -41,7 +41,7 @@ export const WobbleCard = ({
       )}
     >
       <div
-        className="relative  h-full   sm:mx-0 sm:rounded-2xl overflow-hidden"
+        className="relative  h-full   sm:mx-0 rounded overflow-hidden"
     
       >
         <motion.div

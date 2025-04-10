@@ -24,7 +24,7 @@ export default function AboutUsPage() {
           }}
           className="mt-5 tracking-wide text-lg text-gray-200"
         >
-          <p className="text-2xl">Jhee Tattoo Studio– Where Art Meets Skin</p>{" "}
+          <span className="text-2xl flex items-center">Jhee Tattoo Studio &nbsp;<p className="italic"> –Where Art Meets Skin</p> </span>{" "}
           <br />
           <p className="mt-[-1rem] text-slate-300">
             Located in the heart of Thamel, Kathmandu, Jhee Tattoo Studio is a

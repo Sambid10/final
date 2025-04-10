@@ -1,7 +1,10 @@
 "use client";
+import { cn } from "@/util/tw";
 import useScrollPosition from "@react-hook/window-scroll";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+
 import {
   FaFacebook,
   FaInstagram,
@@ -25,8 +28,21 @@ const useRange = (
 
   return mappedValue;
 };
+const links=[{
+  id:1,
+  title:"Home",
+  href:"/"
+},{
+  id:2,
+  title:"About Us",
+  href:"/about"},{
+    id:3,
+    title:"Gallery",
+    href:"/gallery"}
+]
 
 export default function Navbar() {
+  const pathname=usePathname()
   const y = useScrollPosition(60);
   const navX = useRange(y, 0, 50, 0, 42);
   const logoScale = useRange(y, 0, 50, 1, 0.8);
@@ -35,7 +51,7 @@ export default function Navbar() {
     <>
       <header className="flex  items-center justify-between gap-4 bg-black px-6 py-4 pl-18 text-sm">
         <img
-          className="fixed  left-6 top-9 md:top-7 -translate-y-1/2  h-9 w-9 z-[51]"
+          className="absolute  left-6 top-9 md:top-7 -translate-y-1/2  h-9 w-9 z-[51]"
           style={{
             transform: `scale(${logoScale})`,
           }}
@@ -78,17 +94,24 @@ export default function Navbar() {
         </div>
       </header>
       <nav className="sticky py-2 md:py-0 top-0 flex border-b border-gray-700 bg-zinc-900 text-sm z-50">
-        <ol
+        <span
           style={{
             transform: `translateX(${navX}px)`,
           }}
-          className="relative flex gap-5 md:gap-8 px-6 py-4 text-zinc-400 text-base"
+          className="relative flex gap-5 md:gap-8 px-8 py-4 text-zinc-400 text-base"
         >
-          <li>Home</li>
-          <li className="text-zinc-200">About Us</li>
-          <li>Gallery</li>
-          <li>Contacts</li>
-        </ol>
+         {links.map((link,i)=>
+          <Link
+          className={cn(`text-gray-400  ${pathname === link.href && "text-white underline underline-offset-4"}`,{
+          
+          })}
+          key={i}
+          href={link.href}
+          >
+            {link.title}
+          </Link>
+        )}
+        </span>
       </nav>
     </>
   );

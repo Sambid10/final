@@ -8,7 +8,7 @@ export default function Footer() {
       className="relative h-[350px] w-full bg-zinc-900 "
       style={{ clipPath: "polygon(0% 0,100% 0%,100% 100%,0 100%)" }}
     >
-      <div className="fixed bottom-0 h-[350px] w-full bg-zinc-900">
+      <div className="fixed bottom-0 h-[350px] w-full bg-zinc-900 max-w-[100rem]">
         <Content />
       </div>
     </div>
@@ -45,7 +45,7 @@ export function Content() {
           </div>
         </div>
       </div>
-      <div className=" h-[1px]  bg-gray-700 w-full" />
+      <div className=" h-[1px]  bg-gray-700 w-full " />
       <div className="h-[50%]">
         <FooterLinks />
       </div>
